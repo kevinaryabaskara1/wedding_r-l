@@ -75,7 +75,6 @@
                         </div>
                         <div class="border"></div>
                         <div class="tanggal">
-                            <i class="fa fa-car fa-lg"></i>
                             <p class="text-lokasi">Kayuputih | 25 July 2024</p>
                         </div>
                     </div>
@@ -133,21 +132,21 @@
                                     <h1 class="bagian-text-heading">Hari</h1>
                                     <div class="border2"></div>
                                 </div>
-                                <div class="bagian-waktu-detail" id="waktu">
+                                <div class="bagian-waktu-detail">
                                     <div class="bagian-hari">
-                                        <h1>0</h1>
+                                        <h1 id="days">0</h1>
                                         <p>HARI</p>
                                     </div>
                                     <div class="bagian-jam">
-                                        <h1>0</h1>
+                                        <h1 id="hours">0</h1>
                                         <p>JAM</p>
                                     </div>
                                     <div class="bagian-menit">
-                                        <h1>0</h1>
+                                        <h1 id="minutes">0</h1>
                                         <p>MENIT</p>
                                     </div>
                                     <div class="bagian-detik">
-                                        <h1>0</h1>
+                                        <h1 id="seconds">0</h1>
                                         <p>DETIK</p>
                                     </div>
                                 </div>
@@ -358,3 +357,37 @@
 </html>
 
 <script src="script.js"></script>
+<script>
+    var countDownDate = new Date("July 25, 2024 08:00:00").getTime();
+
+// Update the count down every 1 second
+var x = setInterval(function() {
+
+  // Get today's date and time
+  var now = new Date().getTime();
+    
+  // Find the distance between now and the count down date
+  var distance = countDownDate - now;
+    
+  // Time calculations for days, hours, minutes and seconds
+  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+    
+  // Output the result in an element with id="demo"
+//   document.getElementById("waktu").innerHTML = days + "d " + hours + "h "
+//   + minutes + "m " + seconds + "s ";
+    
+    document.getElementById("days").innerHTML = days;
+    document.getElementById("hours").innerHTML = hours;
+    document.getElementById("minutes").innerHTML = minutes;
+    document.getElementById("seconds").innerHTML = seconds;
+
+  // If the count down is over, write some text 
+  if (distance < 0) {
+    clearInterval(x);
+    document.getElementById("waktu").innerHTML = "EXPIRED";
+  }
+}, 1000);
+</script>

@@ -21,27 +21,41 @@
 @import url('https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Italiana&display=swap');
   
-.hijau{
+body{
+  width: 100%;
+  height: 100%;
+  margin:0;
   display: flex;
+  flex-direction: row;
+  justify-content: center;
 }
 
 .bagian-kiri {
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-image: url('img/STA05772.jpg');
   display: flex;
-  height: 100vh;
   flex-direction: column;
   justify-content: flex-end;
-  width: 150%;
-  /* position: sticky; */
+  width: 40%;
+  height: 100vh;
 }
+
 /* .bagian-kiri-gradient{
   background-image: linear-gradient(180deg, rgba(255, 255, 255, 0.66) 0%, #ffffff 100%);
 
   height: 100vh;
 } */
+
+.bagian-kiri .bagian-kiri-content {
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url('img/STA05772.jpg');
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  width: 40%;
+  height: 100vh;
+  position: fixed;
+}
 
 .kuning{
   background-color:rgba(0, 0, 0, 0.555);
@@ -52,7 +66,6 @@
 
 .biru{
   color: rgb(255, 255, 255);
-  width: 400px;
 }
 
 .biru p{
@@ -99,7 +112,7 @@ h1{
 }
 
 .bagian-kanan{
-  width: 100%;
+  width: 55%;
 }
 
 .biru-text{
@@ -114,6 +127,7 @@ h1{
   background-position: top left;
   margin-bottom: -250px;
   opacity: 0.5;
+  align-items: center;
 }
 
 .bagian-foto{
@@ -248,11 +262,17 @@ h1{
   text-align: center;
 }
 
+.bagian-pembuka {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
 .border1{
   border-top: 4px solid rgba(0, 0, 0, 0.856);
   width: 250px;
   margin: 10px 0 0 0;
-  margin-left: 230px;
+  align-self: center;
 }
 
 .bagian-detail-pembuka{
@@ -382,8 +402,13 @@ h1{
 } */
 
 .bagian-heading{
-  margin-top: 60px;
   text-align: center;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-content: center;
+  align-items: center;
+  margin-top: 200px;
 }
 
 .bagian-text-heading{
@@ -510,6 +535,9 @@ h1{
 }
 
 .bagian-acara-pawiwahan{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   text-align: center; 
   font-size: 25px;
 }
@@ -527,8 +555,7 @@ h1{
 .border3{
   width: 100px; 
   border-top: 4px solid rgba(0, 0, 0, 0.753);
-  margin-left: 250px;
-  width: 150px;
+  align-self: center;
 }
 
 .bagian-acara-pawiwahan h1{
@@ -542,6 +569,9 @@ h1{
 }
 
 .bagian-detail-resepsi{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   margin: 20px 0;
 }
 
@@ -562,8 +592,8 @@ h1{
 .border4{
   width: 100px; 
   border-top: 4px solid rgba(0, 0, 0, 0.753);
-  margin-left: 275px;
   width: 100px;
+  align-self: center;
 }
 
 .bagian-maps{
@@ -953,10 +983,8 @@ div.bagian-komen{
 }
 
 .container {
-  max-width: 800px;
   width: 100%;
   background-color: #f9f9f9;
-  padding: 20px;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   display: flex;
@@ -1009,7 +1037,7 @@ button:hover {
 }
 
 input[type=text], select, textarea {
-  width: 130%;
+  width: 100%;
   padding: 12px;
   border: 1px solid #ccc;
   border-radius: 4px;
@@ -1041,9 +1069,13 @@ input[type=submit]:hover {
   padding: 20px;
 }
 
+.row {
+  width: 95%;
+}
+
 .col-75 {
   float: left;
-  width: 75%;
+  width: 100%;
   margin-top: 6px;
 }
 
@@ -1069,56 +1101,49 @@ input[type=submit]:hover {
 } */
 
 /* Responsive Styles */
-@media only screen and (max-width: 769px) {
+@media only screen and (max-width: 768px) {
 	.bagian-kiri {
-            display: none;
-        }
+    display: none;
+  }
        
-       .bagian-kanan {
-            width: 100%;
-       }
-}
-
-@media only screen and (max-width: 769px) {
-	.bagian-heading {
-            display: flex;
-            justify-content: center;
-            flex-direction: column;
-            align-content: center;
-            align-items: center;
-            margin-top: 200px;
-        }
-}
-
-@media (max-width: 1200px) {
-  .bagian-album-utama {
-      width: 100%;
+  .bagian-kanan {
+    width: 100%;
   }
 }
 
-@media (max-width: 600px) {
+/* @media only screen and (max-width: 768px) {
+	.bagian-heading {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
+    margin-top: 200px;
+  }
+} */
+
+@media (max-width: 768px) {
+  .bagian-album-utama {
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
   .toolbar {
-      flex-direction: column;
-      align-items: center;
+    flex-direction: column;
+    align-items: center;
   }
 
   .toolbar button {
-      margin: 4px 0;
+    margin: 4px 0;
   }
 
   .editor {
-      min-height: 150px;
+    min-height: 150px;
   }
 
   .bagian-typing-name{
-      min-height: 150px;
-  }
-}
-
-@media screen and (max-width: 600px) {
-  .col-25, .col-75, input[type=submit] {
-    width: 100%;
-    margin-top: 0;
+    min-height: 150px;
   }
 }
 

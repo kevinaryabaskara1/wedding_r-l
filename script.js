@@ -62,3 +62,16 @@ function updateCount() {
     document.getElementById('charCount').textContent = "Characters: " + characterCount;
     document.getElementById('wordCount').textContent = "Words: " + wordCount;
 }
+
+// waktu mundur
+// const tanggalTujuan = new Date('July 25, 2024 08:00:00').getTime();
+// const sekarang = new Date().getTime();
+// const selisih = tanggalTujuan - sekarang;
+
+// const hari = Math.floor(selisih / (1000 * 60 * 60 * 24));
+// const jam = Math.floor(selisih / (1000 * 60 * 60 * 24) / (100 * 60 * 60));
+// const menit = Math.floor(selisih / (1000 * 60 * 60) / (100 * 60));
+// const detik = Math.floor(selisih / (1000 * 60) / 100);
+
+// const waktu = document.getElementById('waktu');
+// waktu.innerHTML = + hari + 'hari' + jam + 'jam' + menit + 'menit' + detik + 'detik'

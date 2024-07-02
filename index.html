@@ -20,6 +20,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Italiana&display=swap" rel="stylesheet">
 
+    <!-- AOS ANIMATE -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
     <title>Ravey & Lisna</title>
 </head>
 <body>
@@ -42,129 +45,133 @@
     </div>
     
     <div class="bagian-kanan">
-        <div class="ornamen-atas"></div>
-        <div class="bagian-foto">
-            <div class="bingkai-foto">
-                <img src="img/foto-profile/STA05792.jpg" alt="" class="foto-lingkaran">
+        <div class="bagian-show-undangan" id="pembuka">
+            <div class="ornamen-atas"></div>
+            <div class="bagian-foto">
+                <div class="bingkai-foto">
+                    <img src="img/foto-profile/STA05792.jpg" alt="" class="foto-lingkaran">
+                </div>
             </div>
+            <div class="bagian-text">
+                <h1>Ravey & Lisna</h1>
+                <p class="text-pembuka">
+                    Kepada. Bapak/Ibu/Saudara/i <br>
+                    <br>
+                    {nama}
+                    <br><br>
+                    Tanpa mengurangi rasa hormat, kami mengundang anda untuk hadir pada acara pernikahan kami.
+                </p>
+            </div>
+            <div class="buka-undangan">
+                <button href="#" onclick="hideShow()">
+                    <p class="bagian-button-map">Buka Undangan</p>
+                </button>
+            </div>
+            <div class="ornamen-bawah"></div>
         </div>
-        <div class="bagian-text">
-            <h1>Ravey & Lisna</h1>
-            <p class="text-pembuka">
-                Kepada. Bapak/Ibu/Saudara/i <br>
-                <br>
-                {nama}
-                <br><br>
-                Tanpa mengurangi rasa hormat, kami mengundang anda untuk hadir pada acara pernikahan kami.
-            </p>
-        </div>
-        <div class="buka-undangan">
-            <button href="#">
-                <p class="bagian-button-map">Buka Undangan</p>
-            </button>
-        </div>
-        <div class="ornamen-bawah"></div>
+        
 
-            <div class="bagian-tengah">
-                <div class="bagian-utama">
-                    <div class="text-awal">
-                        <div class="wedding">
-                            <p class="text-wedding">The Wedding of</p>
-                        </div>
-                        <div class="name">
-                            <h1 class="text-name">Ravey & Lisna</h1>
-                        </div>
-                        <div class="border"></div>
-                        <div class="tanggal">
-                            <p class="text-lokasi">Kayuputih | 25 July 2024</p>
-                        </div>
+        <div class="bagian-tengah">
+            <div class="bagian-utama">
+                <div class="text-awal">
+                    <div class="wedding">
+                        <p class="text-wedding">The Wedding of</p>
+                    </div>
+                    <div class="name">
+                        <h1 class="text-name">Ravey & Lisna</h1>
+                    </div>
+                    <div class="border"></div>
+                    <div class="tanggal">
+                        <p class="text-lokasi">Kayuputih | 25 July 2024</p>
                     </div>
                 </div>
+            </div>
 
-                <div class="bagian-pribadi">
-                    <div class="ornamen-atas"></div>
-                    <div class="detail-pribadi">
-                        <div class="bagian-detail">
-                            <div class="bagian-pembuka"> 
-                                <h1 class="bagian-text-pembuka">
-                                    Om Swastyastu
-                                </h1>
-                                <div class="border1"></div>
-                                <p class="bagian-detail-pembuka">Atas Asung Kertha Wara Nugraha Ida Sang Hyang Widhi Wasa/Tuhan Yang Maha Esa kami bermaksud mengundang Bapak/Ibu/Saudara/i pada Upacara Manusa Yadnya Pawiwahan (Pernikahan) kami.</p>
-                            </div>
-                            <div class="bagian-pria">
-                                <div class="bagian-profile-pria">
-                                    <div class="bagian-foto-pria">
-                                        <img src="img/foto-pribadi/STA05948.jpg" alt="" class="foto-lingkaran">
-                                    </div>
-                                </div>
-                                <div class="bagian-penjelasan-mempelai">
-                                    <h1 class="bagian-nama-depan">Ravey</h1>
-                                    <h2 class="bagian-nama-lengkap">Komang Agus Ravey Gautama</h2>
-                                    <p>Putra pertama dari pasangan</p>
-                                    <p>Gede Satwika</p>
-                                    <p >&</p>
-                                    <p>Luh Darmi</p>
+            <div class="bagian-pribadi">
+                <div class="ornamen-atas"></div>
+                <div class="detail-pribadi">
+                    <div class="bagian-detail">
+                        <div class="bagian-pembuka"> 
+                            <h1 class="bagian-text-pembuka" data-aos="fade-up" data-aos-duration="1000">
+                                Om Swastyastu
+                            </h1>
+                            <div class="border1" data-aos="fade-up" data-aos-duration="1000"></div>
+                            <p class="bagian-detail-pembuka" data-aos="fade-up" data-aos-duration="1000">Atas Asung Kertha Wara Nugraha Ida Sang Hyang Widhi Wasa/Tuhan Yang Maha Esa kami bermaksud mengundang Bapak/Ibu/Saudara/i pada Upacara Manusa Yadnya Pawiwahan (Pernikahan) kami.</p>
+                        </div>
+
+                        <div class="bagian-pria">
+                            <div class="bagian-profile-pria" data-aos="fade-up" data-aos-duration="1000">
+                                <div class="bagian-foto-pria">
+                                    <img src="img/foto-pribadi/STA05948.jpg" alt="" class="foto-lingkaran-pribadi">
                                 </div>
                             </div>
-                            <div class="bagian-ornament">
-                                <div class="ornament-tengah"></div>
-                            </div>
-                            <div class="bagian-wanita">
-                                <div class="bagian-profile-wanita">
-                                    <div class="bagian-foto-wanita">
-                                        <img src="img/foto-pribadi/STA05973.jpg" alt="" class="foto-lingkaran">
-                                    </div>
-                                </div>
-                                
-                                <div class="bagian-penjelasan-mempelai">
-                                    <h1 class="bagian-nama-depan">Lisna</h1>
-                                    <h2 class="bagian-nama-lengkap">Putu Lisna Yuliantini</h2>
-                                    <p>Putri pertama dari pasangan</p>
-                                    <p>Made Lingga (Alm.)</p>
-                                    <p >&</p>
-                                    <p>Ketut Setiawati</p>
-                                </div>
+                            <div class="bagian-penjelasan-mempelai" data-aos="fade-up" data-aos-duration="1000">
+                                <h1 class="bagian-nama-depan">Ravey</h1>
+                                <h2 class="bagian-nama-lengkap">Komang Agus Ravey Gautama</h2>
+                                <p>Putra pertama dari pasangan</p>
+                                <p>Gede Satwika</p>
+                                <p >&</p>
+                                <p>Luh Darmi</p>
                             </div>
                         </div>
-                        <div class="bagian-bawah-detail">
-                            <div class="bagian-waktu">
-                                <div class="bagian-heading">
-                                    <h1 class="bagian-text-heading">Hari</h1>
-                                    <div class="border2"></div>
+                        <div class="bagian-ornament" data-aos="fade-up" data-aos-duration="1000">
+                            <div class="ornament-tengah"></div>
+                        </div>
+                        <div class="bagian-wanita">
+                            <div class="bagian-profile-wanita" data-aos="fade-up" data-aos-duration="1000">
+                                <div class="bagian-foto-wanita">
+                                    <img src="img/foto-pribadi/STA05973.jpg" alt="" class="foto-lingkaran-pribadi">
                                 </div>
-                                <div class="bagian-waktu-detail" id="waktu">
-                                    <div class="bagian-hari">
-                                        <h1>0</h1>
-                                        <p>HARI</p>
-                                    </div>
-                                    <div class="bagian-jam">
-                                        <h1>0</h1>
-                                        <p>JAM</p>
-                                    </div>
-                                    <div class="bagian-menit">
-                                        <h1>0</h1>
-                                        <p>MENIT</p>
-                                    </div>
-                                    <div class="bagian-detik">
-                                        <h1>0</h1>
-                                        <p>DETIK</p>
-                                    </div>
-                                </div>
-                                <div class="ornamen-bawah"></div>
+                            </div>
+                            
+                            <div class="bagian-penjelasan-mempelai" data-aos="fade-up" data-aos-duration="1000">
+                                <h1 class="bagian-nama-depan">Lisna</h1>
+                                <h2 class="bagian-nama-lengkap">Putu Lisna Yuliantini</h2>
+                                <p>Putri pertama dari pasangan</p>
+                                <p>Made Lingga (Alm.)</p>
+                                <p >&</p>
+                                <p>Ketut Setiawati</p>
                             </div>
                         </div>
                     </div>
+                    <div class="bagian-bawah-detail">
+                        <div class="bagian-waktu">
+                            <div class="bagian-heading" data-aos="fade-up" data-aos-duration="1000">
+                                <h1 class="bagian-text-heading">Hari</h1>
+                                <div class="border2"></div>
+                            </div>
+                            <div class="bagian-waktu-detail" data-aos="fade-up" data-aos-duration="1000">
+                                <div class="bagian-hari">
+                                    <h1 id="days">0</h1>
+                                    <p>HARI</p>
+                                </div>
+                                <div class="bagian-jam">
+                                    <h1 id="hours">0</h1>
+                                    <p>JAM</p>
+                                </div>
+                                <div class="bagian-menit">
+                                    <h1 id="minutes">0</h1>
+                                    <p>MENIT</p>
+                                </div>
+                                <div class="bagian-detik">
+                                    <h1 id="seconds">0</h1>
+                                    <p>DETIK</p>
+                                </div>
+                            </div>
+                            <div class="ornamen-bawah"></div>
+                        </div>
+                    </div>
                 </div>
+            </div>
 
             <div class="bagian-background">
                 <div class="bagian-background-gradient">
                     <div class="bagian-text1">
-                        <p class="bagian-text-penjelasan">Merupakan suatu kehormatan dan kebahagiaan kami apabila Bapak/Ibu/Saudara/i berkenan hadir dalam acara resepsi dan memberikan doa restu.</p>
+                        <p class="bagian-text-penjelasan" data-aos="fade-up" data-aos-duration="1000">Merupakan suatu kehormatan dan kebahagiaan kami apabila Bapak/Ibu/Saudara/i berkenan hadir dalam acara resepsi dan memberikan doa restu.</p>
                         <div class="box-border">
                             <div class="bagian-border">
-                                <div class="bagian-tanggal">
-                                    <h1 class="bagian-detail-tanggal">25</h1>
+                                <div class="bagian-tanggal" data-aos="fade-up" data-aos-duration="1000">
+                                    <h1 class="counter" id="countUP" data-count="100">0</h1>
                                     <p class="bagian-detail-hari">
                                         Kamis, <br>
                                         July <br>
@@ -172,23 +179,23 @@
                                     </p>
                                 </div>
                                 <div class="bagian-acara-pawiwahan">
-                                    <h1 class="bagian-text-pawiwahan">Pawiwahan</h1>
-                                    <div class="border3"></div>
-                                    <div class="bagian-jam">
+                                    <h1 class="bagian-text-pawiwahan" data-aos="fade-up" data-aos-duration="1000">Pawiwahan</h1>
+                                    <div class="border3" data-aos="fade-up" data-aos-duration="1000"></div>
+                                    <div class="bagian-jam" data-aos="fade-up" data-aos-duration="1000">
                                         <p class="bagian-jam-pawiwahan">08:00 WITA - 13:00</p>
                                     </div>
                                     <div class="bagian-detail-resepsi">
-                                        <h1 class="bagian-text-resepsi">Resepsi</h1>
-                                        <div class="border4"></div>
-                                        <div class="bagian-jam-resepsi">
+                                        <h1 class="bagian-text-resepsi" data-aos="fade-up" data-aos-duration="1000">Resepsi</h1>
+                                        <div class="border4" data-aos="fade-up" data-aos-duration="1000"></div>
+                                        <div class="bagian-jam-resepsi" data-aos="fade-up" data-aos-duration="1000">
                                             <p class="bagian-jam-resepsi">14:00 WITA - SELESAI</p>
                                         </div>
                                     </div>
                                     <div class="bagian-detail-lokasi">
-                                        <div class="bagian-lokasi-acara">
+                                        <div class="bagian-lokasi-acara" data-aos="fade-up" data-aos-duration="1000">
                                             <p class="bagian-detail-lokasi-acara">Banjar Dinas Desa, Desa Kayuputih, Kecamatan Banjar, Buleleng, Bali</p>
                                         </div>
-                                        <div class="bagian-maps">
+                                        <div class="bagian-maps" data-aos="fade-up" data-aos-duration="1000">
                                             <a href="https://maps.app.goo.gl/jNn9ZR546soDXr8s9">
                                                 <p class="bagian-button-map">Map Lokasi Acara</p>
                                             </a>
@@ -217,7 +224,7 @@
             
             <div class="bagian-container-album">
                 <div class="bagian-detail-album">
-                    <div class="bagian-text-album">
+                    <div class="bagian-text-album" data-aos="fade-up" data-aos-duration="1000">
                         <h2>Moment</h2>
                     </div>
                 </div>
@@ -292,6 +299,7 @@
             </div> -->
 
             <div class="bagian-doa">
+                <div class="bagian-ornament-tengah"></div>
                 <div class="bagian-detail-doa">
                     <p class="bagian-text-doa">Merupakan suaru kebahagiaan dan kehormatan bagi kami apabila Bapak/Ibu/Saudari/i, berkenan hadir dan memberikan do'a restu kepada kedua mempelai.</p>
                 </div>
@@ -389,4 +397,53 @@ var x = setInterval(function() {
     document.getElementById("waktu").innerHTML = "EXPIRED";
   }
 }, 1000);
+</script>
+
+<script>
+    var div = document.getElementById('pembuka');
+    var display = 0;
+
+    function hideShow()
+    {
+        if(display == 1)
+        {
+            div.style.display = 'block';
+            display = 0;
+        }
+        else
+        {
+            div.style.display = 'none';
+            display = 1;
+        }
+    }
+</script>
+
+<!-- AOS ANIMATE -->
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script>
+  AOS.init();
+</script>
+
+<script>
+    function countTo(){
+        let from = 0;
+        let to = 25;
+        let step = to > from ? 1 : 0;
+        let interval = 200;
+
+        if(from == to){
+            document.querySelector("#countUP").textContent = from;
+            return;
+        }
+
+        let counter = setInterval(function(){
+            from += step;
+            document.querySelector("#countUP").textContent = from;
+
+            if(from == to){
+                clearInterval(counter);
+            }
+        }, interval);
+    }
+    countTo();
 </script>

@@ -231,6 +231,10 @@ h1{
   margin-top: 100px;
 } */
 
+.hide-element{
+  display: none;
+}
+
 .bagian-utama{
   background-position: center center;
   background-repeat: no-repeat;
@@ -579,6 +583,19 @@ h1{
   font-size: 14px;
   font-family: "Open Sans", Sans-serif;
   margin: 3px 0;
+  margin-left: 5px;
+}
+
+.bagian-jam-icon{
+  display: flex;
+  justify-content: center;
+}
+
+.bagian-jam-icon i{
+  font-size: 12px;
+    text-align: center;
+    /* margin: 0; */
+    margin-top: 7px;
 }
 
 .bagian-detail-resepsi{
@@ -598,6 +615,17 @@ h1{
   text-align: center;
 }
 
+.bagian-jam-resepsi{
+  display: flex;
+  justify-content: center;
+}
+
+.bagian-jam-resepsi i{
+  font-size: 12px;
+    text-align: center;
+    margin-top: 7px;
+}
+
 .bagian-detail-lokasi{
   margin: 10px 0;
 }
@@ -607,6 +635,34 @@ h1{
   border-top: 4px solid rgba(0, 0, 0, 0.753);
   width: 100px;
   align-self: center;
+}
+
+.bagian-detail-lokasi{
+  margin: 10px 0;
+}
+
+.bagian-lokasi-acara{
+  display: flex;
+  justify-content: center;
+}
+
+.bagian-lokasi-acara i{
+  font-size: 12px;
+    text-align: center;
+    margin-top: 7px;
+}
+
+.bagian-maps a{
+  display: flex;
+  justify-content: center;
+  text-decoration: none;
+}
+
+.bagian-maps i{
+  font-size: 12px;
+  text-align: center;
+  margin-top: 7px;
+  color: #ffffff;
 }
 
 .bagian-maps{
@@ -624,6 +680,7 @@ h1{
 .bagian-button-map{
   margin: 0;
   color: #ffffff;
+  margin-left: 10px;
 }
 
 a{
@@ -1073,7 +1130,7 @@ label {
 }
 
 input[type=submit] {
-  background-color: #04AA6D;
+  background-color: #b9b9b9;
   color: white;
   padding: 12px 20px;
   border: none;
@@ -1111,6 +1168,101 @@ input[type=submit]:hover {
 
 .col-75 textarea{
   height: 100px;
+}
+
+.bagian-flex{
+  display: flex;
+}
+
+.bagian-flex i{
+  margin-top: 21px;
+  opacity: 0.4;
+  position: absolute;
+  margin-left: 5px;
+  font-size: 13px;
+}
+
+.bagian-komen-detail{
+  margin-top: 20px;
+}
+
+.bagian-head-komen{
+  border-bottom: 2px solid #cccccc;
+  font-family: "Open Sans", Sans-serif;
+  font-size: 17px;
+}
+
+.bagian-list-detail{
+  padding-bottom: 15px;
+  flex-grow: 1;
+  width: calc(100% - 80px);
+}
+
+.bagian-detail-komen{
+  padding: 30px 0;
+}
+
+.bagian-komen-header{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: flex-end;
+  padding: 5px 0 5px 0;
+}
+
+.bagian-avatar-komen{
+  padding-right: 15px;
+}
+
+.komen-name{
+  font-size: 20px;
+  font-weight: 600;
+  text-decoration: none;
+  letter-spacing: 0.7px;
+  margin-right: 5px;
+  margin: 0;
+}
+
+.komen-waktu{
+  padding: 0 10px 0 0;
+  font-size: 12px;
+  margin: 0;
+}
+
+.bagian-subjek-komen{
+  margin: 8px 0 5px 0;
+  font-size: 15px;
+  padding: 0 0 8px 0;
+  word-break: break-word;
+}
+
+.audio-icon-wrapper {
+  width: 4rem;
+  height: 1rem;
+  font-size: 3rem;
+  position: fixed;
+  bottom: 2.5rem;
+  right: 2rem;
+  cursor: pointer;
+  color: white;
+  opacity: 0.5;
+  mix-blend-mode: difference;
+  animation: rotating 4s linear infinite;
+  transform-origin: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  line-height: 0;
+}
+
+@keyframes rotating {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 /* input[type=text]{

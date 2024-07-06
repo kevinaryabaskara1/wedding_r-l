@@ -58,7 +58,7 @@
                 <p class="text-pembuka">
                     Kepada. Bapak/Ibu/Saudara/i <br>
                     <br>
-                    {nama}
+                    <span></span>
                     <br><br>
                     Tanpa mengurangi rasa hormat, kami mengundang anda untuk hadir pada acara pernikahan kami.
                 </p>
@@ -564,6 +564,7 @@ var x = setInterval(function() {
     alert("Thank you")
     })
 
+    // getdata firebase
     // function handleSuccess(items){
     //     console.log(items.val())
     // }
@@ -571,8 +572,6 @@ var x = setInterval(function() {
     // function handleError(error){
     //     console.log(error)
     // }
-
-    
 
     // const colReft = collection(db, 'undangan')
 
@@ -587,4 +586,14 @@ var x = setInterval(function() {
     // .catch(err => {
     //     console.log(err.message)
     // })
+  </script>
+
+  <script>
+    const urlParams = new URLSearchParams(window.location.search);
+
+    const nama = urlParams.get('nama');
+    console.log(nama);
+
+    const namaContainer = document.querySelector('.bagian-text p span');
+    namaContainer.innerText = nama;
   </script>

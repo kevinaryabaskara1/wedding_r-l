@@ -1245,7 +1245,7 @@ input[type=submit]:hover {
   bottom: 2.5rem;
   right: 2rem;
   cursor: pointer;
-  color: white;
+  color: #353535;
   opacity: 0.5;
   mix-blend-mode: difference;
   animation: rotating 4s linear infinite;
@@ -1286,17 +1286,6 @@ input[type=submit]:hover {
   }
 }
 
-/* @media only screen and (max-width: 768px) {
-	.bagian-heading {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-content: center;
-    align-items: center;
-    margin-top: 200px;
-  }
-} */
-
 @media (max-width: 768px) {
   .bagian-album-utama {
     width: 100%;
@@ -1321,5 +1310,36 @@ input[type=submit]:hover {
     min-height: 150px;
   }
 }
+
+/*  */
+
+@media only screen and (max-width: 500px) {
+	.ornamen-atas {
+    margin-bottom: -350px;
+  }
+
+  .bagian-pria{
+    margin-bottom: -230px;
+  }
+
+  .ornament-tengah{
+    margin-bottom: -150px;
+  }
+}
+
+@media only screen and (max-width: 414px) {
+	.ornamen-atas {
+    margin-bottom: -350px;
+  }
+
+  .bagian-pria{
+    margin-bottom: -230px;
+  }
+
+  .ornament-tengah{
+    margin-bottom: -150px;
+  }
+}
+
 
 

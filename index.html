@@ -530,6 +530,7 @@ var x = setInterval(function() {
     import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
     import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-analytics.js";
     import { getDatabase, ref, set, get, child } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-database.js";
+    // import { collection, getDocs } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-database.js";
 
   
     // Your web app's Firebase configuration
@@ -550,6 +551,8 @@ var x = setInterval(function() {
 
     // get ref to database services
     const db = getDatabase(app);
+    // const blogRef = db.ref('blogs').on('value', handleSuccess, handleError)
+    // console.log(app)
 
     document.getElementById("submit").addEventListener('click', function(e){
         e.preventDefault();
@@ -560,4 +563,28 @@ var x = setInterval(function() {
     });
     alert("Thank you")
     })
+
+    // function handleSuccess(items){
+    //     console.log(items.val())
+    // }
+
+    // function handleError(error){
+    //     console.log(error)
+    // }
+
+    
+
+    // const colReft = collection(db, 'undangan')
+
+    // getDocs(colReft)
+    // .then((snapshot) => {
+    //     let undangan = []
+    //     snapshot.docs.forEach((doc) => {
+    //         undangan.push({...doc.data(), id: doc.id})
+    //     })
+    //     console.log(undangan)
+    // })
+    // .catch(err => {
+    //     console.log(err.message)
+    // })
   </script>

@@ -127,14 +127,15 @@ h1{
 }
 
 .ornamen-atas{
-  background-image: url('img/ornament/atas.png');
-  background-size: 150px auto;
+  background-image: url('img/ornament/ornament8.png');
+  background-size: 370px auto;
   height: 50vh;
   background-repeat: no-repeat;
   background-position: top left;
   margin-bottom: -250px;
-  opacity: 0.5;
+  /* opacity: 0.5; */
   align-items: center;
+  margin-left: -40px;
 }
 
 .bagian-foto{
@@ -201,13 +202,15 @@ h1{
 }
 
 .ornamen-bawah{
-  background-image: url('img/ornament/bawah.png');
-  background-size: 150px auto;
+  background-image: url('img/ornament/ornament9.png');
+  background-size: 400px auto;
   height: 25vh;
   background-repeat: no-repeat;
   background-position: bottom right;
   /* margin-top: -100px; */
-  opacity: 0.5;
+  /* opacity: 0.5; */
+  margin-right: -40px;
+  margin-top: -30px;
 }
 
 
@@ -1314,7 +1317,7 @@ input[type=submit]:hover {
   top: 0;
   left: 0;
   width: 100%;
-  height: 100%;
+  /* height: 100%; */
   /* background-image: linear-gradient(180deg, rgba(255, 255, 255, 0.0) 0%, #fff 100%); */
 }
 
@@ -1425,6 +1428,8 @@ svg{
     min-height: 150px;
   }
 }
+
+
 
 /*  */
 

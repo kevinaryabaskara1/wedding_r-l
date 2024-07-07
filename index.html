@@ -367,24 +367,7 @@
                         <div class="bagian-head-komen">Comment</div>
                     </div>
 
-                    <div class="bagian-detail-komen">
-                        <div class="bagian-list-komen">
-                            <div class="bagian-list-detail">
-                                <div class="bagian-komen-header" data-aos="fade-up" data-aos-duration="1000">
-                                    <div class="bagian-avatar-komen">
-                                        <img src="img/ornament/avatar.png" alt="">
-                                    </div>
-                                    <div class="bagian-user-info">
-                                        <p class="komen-name">name</p>
-                                        <p class="komen-waktu">1 days ago</p>
-                                    </div>
-                                </div>
-                                <div class="bagian-subjek-komen" data-aos="fade-up" data-aos-duration="1000">
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum illo eius aliquam in laudantium laboriosam eos fugiat, repudiandae fugit, voluptatum odio, quo voluptates? Soluta deleniti eius adipisci tempora ullam harum?</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    <div id="output"></div>
                 </div>
 
                 <div class="bagian-penutup">
@@ -556,7 +539,7 @@ var x = setInterval(function() {
     // Import the functions you need from the SDKs you need
     import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
     import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-analytics.js";
-    import { getDatabase, ref, set, get, child } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-database.js";
+    import { getDatabase, ref, push, update, child, get } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-database.js";
     // import { collection, getDocs } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-database.js";
 
   
@@ -578,41 +561,156 @@ var x = setInterval(function() {
 
     // get ref to database services
     const db = getDatabase(app);
-    // const blogRef = db.ref('blogs').on('value', handleSuccess, handleError)
+    get(child(ref(db), 'comment')).then(handleSuccess).catch(handleError);
     // console.log(app)
 
     document.getElementById("submit").addEventListener('click', function(e){
         e.preventDefault();
-        set(ref(db, 'user/' + document.getElementById("username").value),
-    {
-        username: document.getElementById("username").value,
-        subject: document.getElementById("subject").value
-    });
-    alert("Thank you")
+        var currentDate = new Date();
+        var newData = {
+            username: document.getElementById("username").value,
+            comment: document.getElementById("subject").value,
+            datetime: currentDate.toISOString() // Store datetime as ISO string
+        };
+        // Get a key for a new comment.
+        const newKey = push(child(ref(db), 'comment')).key;
+
+        // Write the new data simultaneously in the comment's list.
+        const updates = {};
+        updates['/comment/' + newKey] = newData;
+        update(ref(db), updates).then(() => {
+            alert("Thank you")
+            console.log('Data pushed successfully!')
+            // Call function to display data
+            displayData(newData['username'], newData['datetime'], newData['comment']);
+            // clear input
+            document.getElementById("username").value = ''
+            document.getElementById("subject").value = ''
+        }).catch(()=>{
+            alert("Error save comment")
+            console.error('Error pushing data:', error)
+        });
     })
 
     // getdata firebase
-    // function handleSuccess(items){
-    //     console.log(items.val())
-    // }
+    function handleSuccess(snapshot){
+        if (snapshot.exists()) {
+            const data = snapshot.val();
+            for (let key in data) {
+                if (data.hasOwnProperty(key)) {
+                    const entry = data[key];
+                    // Call function to display data
+                    displayData(entry.username, entry.datetime, entry.comment);
+                }
+            }
+        } else {
+            console.log("No data available");
+        }
+    }
 
-    // function handleError(error){
-    //     console.log(error)
-    // }
+    function handleError(error){
+        console.log(error)
+    }
 
-    // const colReft = collection(db, 'undangan')
+    function formatDateRelativeToNow(isoString) {
+        const date = new Date(isoString);
+        const now = new Date();
 
-    // getDocs(colReft)
-    // .then((snapshot) => {
-    //     let undangan = []
-    //     snapshot.docs.forEach((doc) => {
-    //         undangan.push({...doc.data(), id: doc.id})
-    //     })
-    //     console.log(undangan)
-    // })
-    // .catch(err => {
-    //     console.log(err.message)
-    // })
+        // Calculate the difference in milliseconds
+        const diffMilliseconds = now - date;
+
+        // Convert the difference to seconds, then to various units
+        const diffSeconds = Math.floor(diffMilliseconds / 1000);
+        const diffMinutes = Math.floor(diffSeconds / 60);
+        const diffHours = Math.floor(diffMinutes / 60);
+        const diffDays = Math.floor(diffHours / 24);
+        const diffMonths = Math.floor(diffDays / 30);
+        const diffYears = Math.floor(diffDays / 365);
+
+        // Depending on the difference, return the appropriate string
+        if (diffYears > 0) {
+            return `${diffYears} ${diffYears === 1 ? 'year' : 'years'} ago`;
+        } else if (diffMonths > 0) {
+            return `${diffMonths} ${diffMonths === 1 ? 'month' : 'months'} ago`;
+        } else if (diffDays > 0) {
+            return `${diffDays} ${diffDays === 1 ? 'day' : 'days'} ago`;
+        } else if (diffHours > 0) {
+            return `${diffHours} ${diffHours === 1 ? 'hour' : 'hours'} ago`;
+        } else if (diffMinutes > 0) {
+            return `${diffMinutes} ${diffMinutes === 1 ? 'minute' : 'minutes'} ago`;
+        } else {
+            return `just now`;
+        }
+    }
+
+    // Function to display data in HTML
+    function displayData(username, datetime, comment) {
+        const outputContainer = document.getElementById('output');
+            
+        // Create parent container with class bagian-detail-komen
+        const detailKomenContainer = document.createElement('div');
+        detailKomenContainer.className = 'bagian-detail-komen';
+
+        // Create bagian-list-komen div
+        const listKomenDiv = document.createElement('div');
+        listKomenDiv.className = 'bagian-list-komen';
+
+        // Create bagian-list-detail div
+        const listDetailDiv = document.createElement('div');
+        listDetailDiv.className = 'bagian-list-detail';
+
+        // Create bagian-komen-header div with data-aos attributes
+        const komenHeaderDiv = document.createElement('div');
+        komenHeaderDiv.className = 'bagian-komen-header';
+        komenHeaderDiv.setAttribute('data-aos', 'fade-up');
+        komenHeaderDiv.setAttribute('data-aos-duration', '1000');
+
+        // Create bagian-avatar-komen div
+        const avatarKomenDiv = document.createElement('div');
+        avatarKomenDiv.className = 'bagian-avatar-komen';
+        const avatarImg = document.createElement('img');
+        avatarImg.src = 'img/ornament/avatar.png'; // Placeholder image
+        avatarImg.alt = 'Avatar';
+        avatarKomenDiv.appendChild(avatarImg);
+
+        // Create bagian-user-info div
+        const userInfoDiv = document.createElement('div');
+        userInfoDiv.className = 'bagian-user-info';
+        const namePara = document.createElement('p');
+        namePara.className = 'komen-name';
+        namePara.textContent = username; // Display username data
+        const waktuPara = document.createElement('p');
+        waktuPara.className = 'komen-waktu';
+        waktuPara.textContent = formatDateRelativeToNow(datetime); // Placeholder time
+        userInfoDiv.appendChild(namePara);
+        userInfoDiv.appendChild(waktuPara);
+
+        // Append avatar and user info to bagian-komen-header
+        komenHeaderDiv.appendChild(avatarKomenDiv);
+        komenHeaderDiv.appendChild(userInfoDiv);
+
+        // Create bagian-subjek-komen div
+        const subjekKomenDiv = document.createElement('div');
+        subjekKomenDiv.className = 'bagian-subjek-komen';
+        subjekKomenDiv.setAttribute('data-aos', 'fade-up');
+        subjekKomenDiv.setAttribute('data-aos-duration', '1000');
+        const subjekPara = document.createElement('p');
+        subjekPara.textContent = comment; // Display subject data
+        subjekKomenDiv.appendChild(subjekPara);
+
+        // Append bagian-komen-header and bagian-subjek-komen to bagian-list-detail
+        listDetailDiv.appendChild(komenHeaderDiv);
+        listDetailDiv.appendChild(subjekKomenDiv);
+
+        // Append bagian-list-detail to bagian-list-komen
+        listKomenDiv.appendChild(listDetailDiv);
+
+        // Append bagian-list-komen to bagian-detail-komen
+        detailKomenContainer.appendChild(listKomenDiv);
+
+        // Append bagian-detail-komen to outputContainer
+        outputContainer.appendChild(detailKomenContainer);
+    }
   </script>
 
   <script>

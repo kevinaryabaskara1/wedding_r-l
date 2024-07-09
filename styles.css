@@ -128,7 +128,7 @@ h1{
 
 .ornamen-atas{
   background-image: url('img/ornament/ornament8.png');
-  background-size: 370px auto;
+  background-size: 250px auto;
   height: 50vh;
   background-repeat: no-repeat;
   background-position: top left;
@@ -203,14 +203,14 @@ h1{
 
 .ornamen-bawah{
   background-image: url('img/ornament/ornament9.png');
-  background-size: 400px auto;
-  height: 25vh;
+  background-size: 250px auto;
+  height: 40vh;
   background-repeat: no-repeat;
   background-position: bottom right;
   /* margin-top: -100px; */
   /* opacity: 0.5; */
-  margin-right: -40px;
-  margin-top: -30px;
+  /* margin-right: -40px; */
+  margin-top: -150px;
 }
 
 
@@ -1402,15 +1402,11 @@ svg{
   .bagian-kanan {
     width: 100%;
   }
-}
 
-@media (max-width: 768px) {
   .bagian-album-utama {
     width: 100%;
   }
-}
 
-@media (max-width: 768px) {
   .toolbar {
     flex-direction: column;
     align-items: center;
@@ -1429,8 +1425,6 @@ svg{
   }
 }
 
-
-
 /*  */
 
 @media only screen and (max-width: 500px) {
@@ -1446,20 +1440,4 @@ svg{
     margin-bottom: -150px;
   }
 }
-
-@media only screen and (max-width: 499px) {
-	.ornamen-atas {
-    margin-bottom: -350px;
-  }
-
-  .bagian-pria{
-    margin-bottom: -230px;
-  }
-
-  .ornament-tengah{
-    margin-bottom: -150px;
-  }
-}
-
-
 

@@ -1371,7 +1371,7 @@ input[type=submit]:hover {
 
 svg{
   position: absolute;
-  height: 101px;
+  margin-top: -50px;
 }
 
 @keyframes rotating {
@@ -1394,6 +1394,12 @@ svg{
 } */
 
 /* Responsive Styles */
+@media only screen and (max-width: 1200px) {
+  svg {
+    margin-top: -10px;
+  }
+}
+
 @media only screen and (max-width: 768px) {
 	.bagian-kiri {
     display: none;
@@ -1423,17 +1429,27 @@ svg{
   .bagian-typing-name{
     min-height: 150px;
   }
+
+  svg{
+    margin-top: 0px;
+  }
 }
 
 /*  */
 
 @media only screen and (max-width: 500px) {
 	.ornamen-atas {
+    background-size: 150px;
     margin-bottom: -350px;
   }
 
+  .ornamen-bawah {
+    background-size: 150px;
+    margin-top: -100px;
+  }
+
   .bagian-pria{
-    margin-bottom: -230px;
+    margin-bottom: -100px;
   }
 
   .ornament-tengah{
@@ -1441,3 +1457,26 @@ svg{
   }
 }
 
+@media only screen and (max-width: 380px) {
+	.ornamen-atas {
+    background-size: 150px;
+    margin-bottom: -250px;
+  }
+
+  .ornamen-bawah {
+    background-size: 150px;
+    margin-top: -150px;
+  }
+
+  .bagian-atas{
+    margin-bottom: -100px;
+  }
+
+  .bagian-pria{
+    margin-bottom: -100px;
+  }
+
+  .ornament-tengah{
+    margin-bottom: -150px;
+  }
+}

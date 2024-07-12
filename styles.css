@@ -212,6 +212,13 @@ h1{
   font-size: 14px;
 }
 
+span{
+  font-size: 20px;
+    font-family: 'math';
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
 .ornamen-bawah{
   background-image: url('img/ornament/ornament9.png');
   background-size: 250px auto;
